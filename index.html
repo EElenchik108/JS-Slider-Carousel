@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Карусель</title>
+<style>
+
+#prev{
+	width:55px;
+	height:60px;
+	background:url(images/button.png);
+	position:absolute;
+	top:40px;
+	left:0;
+	}
+#prev:hover{
+	background-position: 0 -120px;
+	}
+
+#next{
+	width:55px;
+	height:60px;
+	background:url(images/button.png) 0 -60px;
+	position:absolute;
+	top:40px;
+	right:0;
+	}
+#next:hover{
+	background-position: 0 -180px;
+	}
+
+.gallery{position:relative;
+width:570px}
+
+#thumbs{margin:0 55px}
+
+
+
+/*-------- 2 ВАРИАНТ----------*/
+#prev2{
+	width:55px;
+	height:60px;
+	background:url(images/button.png);
+	position:absolute;
+	top:40px;
+	left:0;
+	}
+#prev2:hover{
+	background-position: 0 -120px;
+	}
+
+#next2{
+	width:55px;
+	height:60px;
+	background:url(images/button.png) 0 -60px;
+	position:absolute;
+	top:40px;
+	right:0;
+	}
+#next2:hover{
+	background-position: 0 -180px;
+	}
+
+.gallery2{position:relative;
+width:570px;
+margin-top:50px}
+
+#thumbs2{
+width:3000px;
+position:absolute;
+top:0; left:0;}
+
+#thumbs2 img{
+	float:left;
+	margin: 0 2px;
+	}
+
+.window{width:462px; overflow:hidden;margin:0 55px;
+position:relative;
+height:130px; }
+
+
+/*-------- 3 ВАРИАНТ----------*/
+.gallery3{position:relative;
+width:570px;
+margin-top:50px}
+
+#thumbs3{
+width:3000px;
+position:absolute;
+top:0; left:0;}
+
+#thumbs3 img{
+	float:left;
+	margin: 0 2px;
+	}
+
+.window3{width:462px; overflow:hidden;margin:0 55px;
+position:relative;
+height:130px; }
+
+
+
+</style>
+</head>
+
+<body>
+
+	<div class="gallery">
+    
+    	<div id="prev"></div>
+        <div id="next"></div>
+        
+    	<div id="thumbs">
+          <img src="images/1.jpg" width="150" height="130" />
+          <img src="images/2.jpg" width="150" height="130" />
+          <img src="images/3.jpg" width="150" height="130" />
+      	</div>   
+    </div> <!-- - первый способ -->
+
+
+
+
+	<div class="gallery2">
+    
+    	<div id="prev2"></div>
+        <div id="next2"></div>
+        <div class="window">
+            <div id="thumbs2">
+              <img src="images/1.jpg" width="150" height="130" />
+              <img src="images/2.jpg" width="150" height="130" />
+              <img src="images/3.jpg" width="150" height="130" />
+              <img src="images/4.jpg" width="150" height="130" />
+              <img src="images/5.jpg" width="150" height="130" />
+              <img src="images/6.jpg" width="150" height="130" />
+              <img src="images/7.jpg" width="150" height="130" />
+              <img src="images/8.jpg" width="150" height="130" />
+              <img src="images/9.jpg" width="150" height="130" />
+              <img src="images/10.jpg" width="150" height="130" />
+              <img src="images/11.jpg" width="150" height="130" />
+              <img src="images/12.jpg" width="150" height="130" />
+              <img src="images/13.jpg" width="150" height="130" />
+              <img src="images/14.jpg" width="150" height="130" />
+              <img src="images/15.jpg" width="150" height="130" />
+              <img src="images/16.jpg" width="150" height="130" />
+              <img src="images/17.jpg" width="150" height="130" />
+            </div>   
+        </div>
+    </div>
+    
+    
+    
+    
+    	<div class="gallery3">
+    
+        <div class="window3">
+            <div id="thumbs3">
+              <img src="images/1.jpg" width="150" height="130" />
+              <img src="images/2.jpg" width="150" height="130" />
+              <img src="images/3.jpg" width="150" height="130" />
+              <img src="images/4.jpg" width="150" height="130" />
+              <img src="images/5.jpg" width="150" height="130" />
+              <img src="images/6.jpg" width="150" height="130" />
+              <img src="images/7.jpg" width="150" height="130" />
+              <img src="images/8.jpg" width="150" height="130" />
+              <img src="images/9.jpg" width="150" height="130" />
+              <img src="images/10.jpg" width="150" height="130" />
+              <img src="images/11.jpg" width="150" height="130" />
+              <img src="images/12.jpg" width="150" height="130" />
+              <img src="images/13.jpg" width="150" height="130" />
+              <img src="images/14.jpg" width="150" height="130" />
+              <img src="images/15.jpg" width="150" height="130" />
+              <img src="images/16.jpg" width="150" height="130" />
+              <img src="images/17.jpg" width="150" height="130" />
+            </div>   
+        </div>
+    </div>
+    
+
+<script>
+
+//////////-----------1 ВАРИАНТ-------------////////// Способ делается, когда картинки весят не много.
+
+let pics=['images/1.jpg', 'images/2.jpg', 'images/3.jpg', 'images/4.jpg', 'images/5.jpg', 'images/6.jpg', 'images/7.jpg', 'images/8.jpg', 'images/9.jpg', 'images/10.jpg', 'images/11.jpg', 'images/12.jpg', 'images/13.jpg', 'images/14.jpg', 'images/15.jpg', 'images/16.jpg', 'images/17.jpg'];
+
+let imgs = document.querySelectorAll('#thumbs>img');
+let next = document.getElementById('next');
+let prev = document.getElementById('prev');
+let count = 0;
+
+prev.addEventListener('click', ()=> {
+  count++;
+  if (count>=pics.length) count=0;
+  for (let i=0; i<imgs.length; i++) {
+    imgs[i].src= pics[(i+count)%pics.length];
+  }
+})
+
+next.addEventListener('click', ()=> {
+  count--;
+  if (count<0) count=pics.length-1;
+  for (let i=0; i<imgs.length; i++) {
+    imgs[i].src= pics[(i+count)%pics.length];
+  }
+})
+
+//////////-----------2 ВАРИАНТ-------------//////////
+let prev2 = document.getElementById('prev2');
+let next2 = document.getElementById('next2');
+let win2 = document.querySelector('.window');
+let thumbs2 = document.getElementById('thumbs2');
+let imgs2 =  document.querySelectorAll('#thumbs2>img');
+let amount = imgs2.length;
+let img2 = imgs2[0];
+let wImg = img2.getBoundingClientRect().width;
+let mImg = parseInt(window.getComputedStyle(img2).marginLeft);
+let shift2 = wImg+mImg*2;
+let wThumbs2 = shift2*amount;
+let wWin2 = win2.getBoundingClientRect().width;
+let amountImg = parseInt(wWin2/shift2);
+for (let i=0; i<amountImg; i++)  {
+  thumbs2.append(imgs2[i].cloneNode()); //- делаем клон и вставляем
+}
+let pos = 0;
+prev2.addEventListener('click', ()=> {
+  pos-=shift2;
+  if (pos==-wThumbs2) pos=0;
+  thumbs2.style.left = pos+'px';
+})
+
+next2.addEventListener('click', ()=> {
+  pos+=shift2;
+  if (pos==shift2) pos=-wThumbs2+shift2;
+  thumbs2.style.left = pos+'px';
+})
+
+
+//////////-----------3 ВАРИАНТ-------------//////////
+
+let win3 = document.querySelector('.window3');
+let thumbs3 = document.getElementById('thumbs3');
+let imgs3 =  document.querySelectorAll('#thumbs3>img');
+let amount3 = imgs2.length;
+let img3 = imgs3[0];
+let wImg3 = img3.getBoundingClientRect().width;
+let mImg3 = parseInt(window.getComputedStyle(img3).marginLeft);
+let shift3 = wImg3+mImg3*2;
+let wThumbs3 = shift3*amount3;
+let wWin3 = win3.getBoundingClientRect().width;
+let amountImg3 = parseInt(wWin3/shift2);
+for (let i=0; i<amountImg3; i++)  {
+  thumbs3.append(imgs3[i].cloneNode()); //- делаем клон и вставляем
+}
+
+let pos3 = 0;
+win3.addEventListener('wheel', (event)=> {
+  if (event.deltaY>0) {
+   pos3-=10;
+ }
+  if (event.deltaY<0) {
+    pos3+=10;
+  } 
+  if (pos3<=-wThumbs3) pos3=0;
+  if (pos3>=shift3) pos3=-wThumbs3+shift3;
+  thumbs3.style.left=pos3+'px'; 
+})
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
